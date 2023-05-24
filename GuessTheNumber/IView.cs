@@ -7,6 +7,9 @@ namespace GuessTheNumber
 {
     public interface IView
     {
-        
+        void Introduction();
+        int TakeGuess();
+        bool GuessEval(int guess, int attempts);
+        void Success();
     }
 }

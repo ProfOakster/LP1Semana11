@@ -18,6 +18,21 @@ namespace GuessTheNumber
         public void Run(IView view)
         {
             this.view = view;
+
+            int guess;
+            int attempts = 0;
+            bool guessedCorrectly = false;
+
+            view.Introduction();
+
+            while (!guessedCorrectly)
+            {
+                guess = view.TakeGuess();
+                attempts++;
+                guessedCorrectly = view.GuessEval(guess, attempts);
+            }
+
+            view.Success();
         }
     }
 }
